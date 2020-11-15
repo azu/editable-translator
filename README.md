@@ -17,8 +17,10 @@ Install with [npm](https://www.npmjs.com/):
 
 Run following code as bookmarklet:
 
-- [editable-translator](javascript:(function()%7Bimport%20%7B%20run%20%7D%20from%20%22https%3A%2F%2Fcdn.skypack.dev%2F%40azu%2Feditable-translatorr%22%3Brun()%7D)())
-    - Drag and Drap to your browser's toolbar
+```js
+javascript:(function()%7Bimport%20%7B%20run%20%7D%20from%20%22https%3A%2F%2Fcdn.skypack.dev%2F%40azu%2Feditable-translatorr%22%3Brun()%7D)())
+``` 
+
 
 - Double Click: Edit Mode
 - Escape key: Translate page again
