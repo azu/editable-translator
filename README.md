@@ -1,16 +1,27 @@
-# editable-translator
+# @azu/editable-translator
 
-ContentEditable + Google Translarator.
+ContentEditable + Google Translator.
+
+- Edit original content and translate it again
+- This tool support pre-editor for translate
+
+For more details, See [自動翻訳大全 終わらない英語の仕事が5分で片づく超英語術](https://www.amazon.co.jp/dp/B08M3JC1Q1/).
 
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install editable-translator
+    npm install @azu/editable-translator
 
 ## Usage
 
-- [ ] Write usage instructions
+```js
+import { run } from "./editable-translator";
+run();
+```
+
+- Double Click: Edit Mode
+- Escape key: Translate page again
 
 ## Changelog
 
