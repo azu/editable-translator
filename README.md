@@ -23,7 +23,7 @@ Usage
 
 - Run bookmarklet: translate page
 - Double Click: Edit Mode
-- <kbd>Escape</ldb>: Translate the page again
+- <kbd>Escape</kbd>: Translate the page again
 
 ## API
 
