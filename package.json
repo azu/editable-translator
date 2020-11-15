@@ -1,0 +1,72 @@
+{
+  "name": "editable-translator",
+  "version": "1.0.0",
+  "description": "ContentEditable + Google Translarator.",
+  "keywords": [
+    "translate",
+    "google",
+    "editor",
+    "edit"
+  ],
+  "homepage": "https://github.com/azu/editable-translator",
+  "bugs": {
+    "url": "https://github.com/azu/editable-translator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/editable-translator.git"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "sideEffects": false,
+  "main": "lib/editable-translator.js",
+  "module": "module/editable-translator.js",
+  "types": "lib/editable-translator.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "module"
+  ],
+  "scripts": {
+    "dev": "parcel serve public/index.html",
+    "build": "tsc -p . && tsc -p ./tsconfig.module.json",
+    "clean": "rimraf lib/ module/",
+    "prepublishOnly": "npm run clean && npm run build",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "test": "#",
+    "watch": "tsc -p . --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^14.14.7",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "mocha": "^8.2.1",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "ts-node-test-register": "^9.0.0",
+    "typescript": "^4.0.5"
+  }
+}
