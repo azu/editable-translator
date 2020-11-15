@@ -19,8 +19,11 @@ You can get a bookmarklet via following page.
 
 - <https://azu.github.io/editable-translator/>
 
+Usage
+
+- Run bookmarklet: translate page
 - Double Click: Edit Mode
-- Escape key: Translate page again
+- Escape key: Translate the page again
 
 ## API
 
