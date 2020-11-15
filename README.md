@@ -23,6 +23,12 @@ run();
 - Double Click: Edit Mode
 - Escape key: Translate page again
 
+## Test
+
+Run playground
+
+    yarn dev
+
 ## Changelog
 
 See [Releases page](https://github.com/azu/editable-translator/releases).
