@@ -18,9 +18,8 @@ Install with [npm](https://www.npmjs.com/):
 Run following code as bookmarklet:
 
 ```js
-javascript:(function()%7Bimport%20%7B%20run%20%7D%20from%20%22https%3A%2F%2Fcdn.skypack.dev%2F%40azu%2Feditable-translatorr%22%3Brun()%7D)())
+javascript:(function()%7B(async%20function%20main()%7Bconst%20%7B%20run%20%7D%20%3D%20await%20import(%22https%3A%2F%2Fcdn.skypack.dev%2F%40azu%2Feditable-translator%22)%3Brun()%3B%7D)()%7D)()
 ``` 
-
 
 - Double Click: Edit Mode
 - Escape key: Translate page again
@@ -28,8 +27,10 @@ javascript:(function()%7Bimport%20%7B%20run%20%7D%20from%20%22https%3A%2F%2Fcdn.
 ## API
 
 ```js
-import { run } from "https://cdn.skypack.dev/@azu/editable-translatorr";
-run();
+(async function main(){
+    const { run } = await import("https://cdn.skypack.dev/@azu/editable-translator");
+    run();
+})();
 ```
 
 
