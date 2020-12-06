@@ -92,13 +92,17 @@ export function run() {
     //     events.dispatchEvent(new CustomEvent("edit"));
     // });
     // Esc → Restore mode
-    const doubleKey = (key: string) => {
+    const doubleKey = (key: string, timeout: number = 500) => {
         let pressedKey = "";
+        let clickTimestamp = 0;
         return (event: KeyboardEvent): boolean => {
-            if (pressedKey === key && key === event.key) {
+            const now = performance.now();
+            if (pressedKey === key && key === event.key && now - clickTimestamp <= timeout) {
+                clickTimestamp = 0;
                 pressedKey = "";
                 return true;
             }
+            clickTimestamp = now;
             pressedKey = event.key;
             return false;
         };
