@@ -1,6 +1,6 @@
 {
   "name": "@azu/editable-translator",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "ContentEditable + Google Translator.",
   "keywords": [
     "translate",
