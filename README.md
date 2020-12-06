@@ -22,8 +22,8 @@ You can get a bookmarklet via following page.
 Usage
 
 - Run bookmarklet: translate page
-- Double Click: Edit Mode
-- <kbd>Escape</kbd>: Translate the page again
+- Double <kbd>Shift</kbd>: Toggle edit and translate mode
+- <kbd>Escape</kbd>: Leave edit mode and Translate the page again
 
 ## API
 

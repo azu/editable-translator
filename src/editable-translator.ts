@@ -62,13 +62,6 @@ export function run() {
         confirmButton.click();
         return true;
     };
-    const events = new EventTarget();
-    events.addEventListener("edit", () => {
-        enterEditMode();
-    });
-    events.addEventListener("leave", () => {
-        leaveEditMode();
-    });
     const enterEditMode = () => {
         document.body.contentEditable = "true";
         restoreTranslate();
@@ -77,14 +70,46 @@ export function run() {
         document.body.contentEditable = "false";
         translate();
     };
-    // Double Click → Edit mode
-    document.body.addEventListener("dblclick", () => {
-        events.dispatchEvent(new CustomEvent("edit"));
+    const toggleMode = () => {
+        if (document.body.contentEditable === "true") {
+            leaveEditMode();
+        } else {
+            enterEditMode();
+        }
+    };
+    const events = new EventTarget();
+    events.addEventListener("edit", () => {
+        enterEditMode();
     });
+    events.addEventListener("leave", () => {
+        leaveEditMode();
+    });
+    events.addEventListener("toggle", () => {
+        toggleMode();
+    });
+    // Double Click → Edit mode
+    // document.body.addEventListener("dblclick", () => {
+    //     events.dispatchEvent(new CustomEvent("edit"));
+    // });
     // Esc → Restore mode
+    const doubleKey = (key: string) => {
+        let pressedKey = "";
+        return (event: KeyboardEvent): boolean => {
+            if (pressedKey === key && key === event.key) {
+                pressedKey = "";
+                return true;
+            }
+            pressedKey = event.key;
+            return false;
+        };
+    };
+    const doubledShift = doubleKey("Shift");
     document.body.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" || event.key === "Esc") {
+        if (event.key === "Escape") {
             events.dispatchEvent(new CustomEvent("leave"));
+        }
+        if (doubledShift(event)) {
+            events.dispatchEvent(new CustomEvent("toggle"));
         }
     });
     // Bootstrap
